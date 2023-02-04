@@ -1,2 +1,351 @@
 # compile-targets
-Exploring compile targets
+> Exploring compile targets
+
+Compiled programming languages often have a notion of "compile target", "compilation target", and/or "target triple" (even if it's more like a quintuple, i.e. 5-tuple).
+
+For Rust programming language, the list of targets supported by `rustc` (the Rust's compiler) can be obtained like this:
+
+```console
+rustc --print target-list
+```
+
+<details>
+  <summary>Sample output</summary>
+  
+```text
+aarch64-apple-darwin
+aarch64-apple-ios
+aarch64-apple-ios-macabi
+aarch64-apple-ios-sim
+aarch64-apple-tvos
+aarch64-apple-watchos-sim
+aarch64-fuchsia
+aarch64-kmc-solid_asp3
+aarch64-linux-android
+aarch64-nintendo-switch-freestanding
+aarch64-pc-windows-gnullvm
+aarch64-pc-windows-msvc
+aarch64-unknown-freebsd
+aarch64-unknown-hermit
+aarch64-unknown-linux-gnu
+aarch64-unknown-linux-gnu_ilp32
+aarch64-unknown-linux-musl
+aarch64-unknown-netbsd
+aarch64-unknown-none
+aarch64-unknown-none-softfloat
+aarch64-unknown-openbsd
+aarch64-unknown-redox
+aarch64-unknown-uefi
+aarch64-uwp-windows-msvc
+aarch64-wrs-vxworks
+aarch64_be-unknown-linux-gnu
+aarch64_be-unknown-linux-gnu_ilp32
+arm-linux-androideabi
+arm-unknown-linux-gnueabi
+arm-unknown-linux-gnueabihf
+arm-unknown-linux-musleabi
+arm-unknown-linux-musleabihf
+arm64_32-apple-watchos
+armeb-unknown-linux-gnueabi
+armebv7r-none-eabi
+armebv7r-none-eabihf
+armv4t-none-eabi
+armv4t-unknown-linux-gnueabi
+armv5te-none-eabi
+armv5te-unknown-linux-gnueabi
+armv5te-unknown-linux-musleabi
+armv5te-unknown-linux-uclibceabi
+armv6-unknown-freebsd
+armv6-unknown-netbsd-eabihf
+armv6k-nintendo-3ds
+armv7-apple-ios
+armv7-linux-androideabi
+armv7-unknown-freebsd
+armv7-unknown-linux-gnueabi
+armv7-unknown-linux-gnueabihf
+armv7-unknown-linux-musleabi
+armv7-unknown-linux-musleabihf
+armv7-unknown-linux-uclibceabi
+armv7-unknown-linux-uclibceabihf
+armv7-unknown-netbsd-eabihf
+armv7-wrs-vxworks-eabihf
+armv7a-kmc-solid_asp3-eabi
+armv7a-kmc-solid_asp3-eabihf
+armv7a-none-eabi
+armv7a-none-eabihf
+armv7k-apple-watchos
+armv7r-none-eabi
+armv7r-none-eabihf
+armv7s-apple-ios
+asmjs-unknown-emscripten
+avr-unknown-gnu-atmega328
+bpfeb-unknown-none
+bpfel-unknown-none
+hexagon-unknown-linux-musl
+i386-apple-ios
+i586-pc-windows-msvc
+i586-unknown-linux-gnu
+i586-unknown-linux-musl
+i686-apple-darwin
+i686-linux-android
+i686-pc-windows-gnu
+i686-pc-windows-msvc
+i686-unknown-freebsd
+i686-unknown-haiku
+i686-unknown-linux-gnu
+i686-unknown-linux-musl
+i686-unknown-netbsd
+i686-unknown-openbsd
+i686-unknown-uefi
+i686-uwp-windows-gnu
+i686-uwp-windows-msvc
+i686-wrs-vxworks
+m68k-unknown-linux-gnu
+mips-unknown-linux-gnu
+mips-unknown-linux-musl
+mips-unknown-linux-uclibc
+mips64-openwrt-linux-musl
+mips64-unknown-linux-gnuabi64
+mips64-unknown-linux-muslabi64
+mips64el-unknown-linux-gnuabi64
+mips64el-unknown-linux-muslabi64
+mipsel-sony-psp
+mipsel-unknown-linux-gnu
+mipsel-unknown-linux-musl
+mipsel-unknown-linux-uclibc
+mipsel-unknown-none
+mipsisa32r6-unknown-linux-gnu
+mipsisa32r6el-unknown-linux-gnu
+mipsisa64r6-unknown-linux-gnuabi64
+mipsisa64r6el-unknown-linux-gnuabi64
+msp430-none-elf
+nvptx64-nvidia-cuda
+powerpc-unknown-freebsd
+powerpc-unknown-linux-gnu
+powerpc-unknown-linux-gnuspe
+powerpc-unknown-linux-musl
+powerpc-unknown-netbsd
+powerpc-unknown-openbsd
+powerpc-wrs-vxworks
+powerpc-wrs-vxworks-spe
+powerpc64-unknown-freebsd
+powerpc64-unknown-linux-gnu
+powerpc64-unknown-linux-musl
+powerpc64-unknown-openbsd
+powerpc64-wrs-vxworks
+powerpc64le-unknown-freebsd
+powerpc64le-unknown-linux-gnu
+powerpc64le-unknown-linux-musl
+riscv32gc-unknown-linux-gnu
+riscv32gc-unknown-linux-musl
+riscv32i-unknown-none-elf
+riscv32im-unknown-none-elf
+riscv32imac-unknown-none-elf
+riscv32imac-unknown-xous-elf
+riscv32imc-esp-espidf
+riscv32imc-unknown-none-elf
+riscv64gc-unknown-freebsd
+riscv64gc-unknown-linux-gnu
+riscv64gc-unknown-linux-musl
+riscv64gc-unknown-none-elf
+riscv64gc-unknown-openbsd
+riscv64imac-unknown-none-elf
+s390x-unknown-linux-gnu
+s390x-unknown-linux-musl
+sparc-unknown-linux-gnu
+sparc64-unknown-linux-gnu
+sparc64-unknown-netbsd
+sparc64-unknown-openbsd
+sparcv9-sun-solaris
+thumbv4t-none-eabi
+thumbv5te-none-eabi
+thumbv6m-none-eabi
+thumbv7a-pc-windows-msvc
+thumbv7a-uwp-windows-msvc
+thumbv7em-none-eabi
+thumbv7em-none-eabihf
+thumbv7m-none-eabi
+thumbv7neon-linux-androideabi
+thumbv7neon-unknown-linux-gnueabihf
+thumbv7neon-unknown-linux-musleabihf
+thumbv8m.base-none-eabi
+thumbv8m.main-none-eabi
+thumbv8m.main-none-eabihf
+wasm32-unknown-emscripten
+wasm32-unknown-unknown
+wasm32-wasi
+wasm64-unknown-unknown
+x86_64-apple-darwin
+x86_64-apple-ios
+x86_64-apple-ios-macabi
+x86_64-apple-tvos
+x86_64-apple-watchos-sim
+x86_64-fortanix-unknown-sgx
+x86_64-fuchsia
+x86_64-linux-android
+x86_64-pc-solaris
+x86_64-pc-windows-gnu
+x86_64-pc-windows-gnullvm
+x86_64-pc-windows-msvc
+x86_64-sun-solaris
+x86_64-unknown-dragonfly
+x86_64-unknown-freebsd
+x86_64-unknown-haiku
+x86_64-unknown-hermit
+x86_64-unknown-illumos
+x86_64-unknown-l4re-uclibc
+x86_64-unknown-linux-gnu
+x86_64-unknown-linux-gnux32
+x86_64-unknown-linux-musl
+x86_64-unknown-netbsd
+x86_64-unknown-none
+x86_64-unknown-none-linuxkernel
+x86_64-unknown-openbsd
+x86_64-unknown-redox
+x86_64-unknown-uefi
+x86_64-uwp-windows-gnu
+x86_64-uwp-windows-msvc
+x86_64-wrs-vxworks
+```
+</details>
+
+For Golang, the list of supported targets can be obtained like this:
+
+```console
+go tool dist list
+```
+<details>
+  <summary>Sample output</summary>
+  
+```text
+aix/ppc64
+android/386
+android/amd64
+android/arm
+android/arm64
+darwin/amd64
+darwin/arm64
+dragonfly/amd64
+freebsd/386
+freebsd/amd64
+freebsd/arm
+freebsd/arm64
+freebsd/riscv64
+illumos/amd64
+ios/amd64
+ios/arm64
+js/wasm
+linux/386
+linux/amd64
+linux/arm
+linux/arm64
+linux/loong64
+linux/mips
+linux/mips64
+linux/mips64le
+linux/mipsle
+linux/ppc64
+linux/ppc64le
+linux/riscv64
+linux/s390x
+netbsd/386
+netbsd/amd64
+netbsd/arm
+netbsd/arm64
+openbsd/386
+openbsd/amd64
+openbsd/arm
+openbsd/arm64
+openbsd/mips64
+plan9/386
+plan9/amd64
+plan9/arm
+solaris/amd64
+windows/386
+windows/amd64
+windows/arm
+windows/arm64
+```
+</details>
+
+Even `vcpkg`, a free C/C++ package manager for acquiring and managing libraries, has its own unique set of targets, which can be obtained like this:
+
+```console
+vcpkg help triplet
+```
+
+<details>
+  <summary>Sample output</summary>
+  
+```text
+Available architecture triplets:
+vcpkg built-in triplets:
+  arm-uwp
+  arm64-windows
+  x64-linux
+  x64-osx
+  x64-uwp
+  x64-windows-static
+  x64-windows
+  x86-windows
+VCPKG community triplets:
+  arm-android
+  arm-ios
+  arm-linux-release
+  arm-linux
+  arm-mingw-dynamic
+  arm-mingw-static
+  arm-neon-android
+  arm-uwp-static-md
+  arm-windows-static
+  arm-windows
+  arm64-android
+  arm64-ios
+  arm64-linux-release
+  arm64-linux
+  arm64-mingw-dynamic
+  arm64-mingw-static
+  arm64-osx-dynamic
+  arm64-osx-release
+  arm64-osx
+  arm64-uwp-static-md
+  arm64-uwp
+  arm64-windows-static-md
+  arm64-windows-static-release
+  arm64-windows-static
+  arm64ec-windows
+  armv6-android
+  ppc64le-linux-release
+  ppc64le-linux
+  s390x-linux-release
+  s390x-linux
+  wasm32-emscripten
+  x64-android
+  x64-freebsd
+  x64-ios
+  x64-linux-dynamic
+  x64-linux-release
+  x64-mingw-dynamic
+  x64-mingw-static
+  x64-openbsd
+  x64-osx-dynamic
+  x64-osx-release
+  x64-uwp-static-md
+  x64-windows-release
+  x64-windows-static-md
+  x64-windows-static-release
+  x86-android
+  x86-freebsd
+  x86-ios
+  x86-linux
+  x86-mingw-dynamic
+  x86-mingw-static
+  x86-uwp-static-md
+  x86-uwp
+  x86-windows-static-md
+  x86-windows-static
+  x86-windows-v120
+```
+</details>
+
+## TODO: figure out how they are related
