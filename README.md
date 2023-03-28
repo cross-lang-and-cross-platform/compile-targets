@@ -348,4 +348,6 @@ VCPKG community triplets:
 ```
 </details>
 
+Another fun source of compile targets is [`llvm-mos`](https://github.com/llvm-mos/llvm-mos) about which I learned from ["C++ Weekly - Ep 369 - llvm-mos: Bringing C++23 To Your Favorite 80's Computers"](https://www.youtube.com/watch?v=R30EQGjxoAc).
+
 ## TODO: figure out how they are related
